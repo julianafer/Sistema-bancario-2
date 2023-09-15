@@ -2,12 +2,12 @@ class Cliente {
 
     private _nome: string;
     private _cpf: string;
-    private _conta: Array<Conta>;
+    private _contas: Array<Conta>;
 
     constructor(nome: string, cpf: string) {
         this._nome = nome;
         this._cpf = cpf;
-        this._conta = new Array<Conta>();
+        this._contas = new Array<Conta>();
     }
 
     get nome() {
@@ -26,12 +26,17 @@ class Cliente {
         this._cpf = cpf;
     }
 
-    get conta() {
-        return this._conta;
+    get contas() {
+        return this._contas;
     }
 
-    set conta(conta: Conta) {
-        this._conta = conta;
+    set contas(contas: Array<Conta>) {
+        this._contas = contas;
+    }
+
+    toString(): string {
+        return `Nome: ${this._nome} 
+        - CPF: ${this._cpf}`;
     }
 
 }
